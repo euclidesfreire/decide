@@ -1,0 +1,15 @@
+services:
+  mysql:
+    image: postgres:17.4
+    restart: always
+    container_name: decide-postgres
+    environment:
+      POSTGRES_USER: decide
+      POSTGRES_PASSWORD: decide
+    ports: 
+      - '5432:5432'
+    networks: 
+      - decide-network
+networks:
+  decide-network:
+    driver: bridge
